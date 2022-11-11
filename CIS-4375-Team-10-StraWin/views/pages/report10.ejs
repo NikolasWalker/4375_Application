@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+  table, th, td {
+    border:1px solid black;
+  }
+</style>
+
+<%- include('../partials/head'); %>
+
+<body class="container">
+<body style="background-color: #DBF2FF;"
+
+<%- include('../partials/header'); %>
+
+<style>
+    .btn {
+      background-color: DodgerBlue;
+      border: none;
+      color: white;
+      padding: 12px 16px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    
+    /* Darker background on mouse-over */
+    .btn:hover {
+      background-color: RoyalBlue;
+    }
+    </style>
+
+<main> 
+    <br>
+    <div class="jumbotron" style="background-color:#A4BCE0">
+      <h6><center><strong>TOTAL SUBSCRIPTION REVENUE BY REGION FOR 2022</strong></center></h6>
+      <table style="width: 100%;">
+          <tr>
+              <th>Region</th>
+              <th>Total Revenue</th>
+             
+          </tr>
+          <% report10.forEach(function(report10) { %>
+          <tr>
+              <td><%= report10.region_name %></td>
+              <td><%= report10.Total_Revenue %></td>
+             
+          </tr>
+          
+          <% }); %>
+      </table>
+  </div>
+    
+<br>
+<ul>
+    <a href="/reports"><button class="btn"><i class="fa fa-home"></i> Back</button></a>
+</ul>
+</main>
+
+
+</body>
+</body>
+</html>

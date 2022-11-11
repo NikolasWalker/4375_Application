@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+  table, th, td {
+    border:1px solid black;
+  }
+</style>
+
+<%- include('../partials/head'); %>
+
+<body class="container">
+<body style="background-color: #DBF2FF;"
+
+<%- include('../partials/header'); %>
+
+<style>
+    .btn {
+      background-color: DodgerBlue;
+      border: none;
+      color: white;
+      padding: 12px 16px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    
+    /* Darker background on mouse-over */
+    .btn:hover {
+      background-color: RoyalBlue;
+    }
+    </style>
+
+<main> 
+    <br>
+    <div class="jumbotron" style="background-color:#A4BCE0">
+      <h6><center><strong>AMOUNT OF PRODUCTS USED UNDER A CLOUD SERVER</strong></center></h6>
+      <table style="width: 100%;">
+          <tr>
+              <th>Server ID</th>
+              <th>VM Name</th>
+              <th>VM Type</th>
+              <th>Server Location</th>
+              <th>Server Number</th>
+              <th>Total Products</th>
+          </tr>
+          <% report7.forEach(function(report7) { %>
+          <tr>
+              <td><%= report7.server_id %></td>
+              <td><%= report7.vm_name %></td>
+              <td><%= report7.vm_type %></td> 
+              <td><%= report7.server_location %></td>
+              <td><%= report7.server_number %></td> 
+              <td><%= report7.total_products %></td> 
+          </tr>
+          
+          <% }); %>
+      </table>
+  </div>
+    
+<br>
+<ul>
+  <a href="/reports"><button class="btn"><i class="fa fa-home"></i> Back</button></a>
+</ul>
+</main>
+
+
+</body>
+</body>
+</html>
