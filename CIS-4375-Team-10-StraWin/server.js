@@ -1356,8 +1356,8 @@ app.all('/updateemployee', function(req, res){
 
 
 
-app.delete('/deleteemployee', function(req, res){
-  var deleteEmployeeID = req.body.employee_id
+app.get('/deleteemployee', function(req, res){
+  var deleteEmployeeID = {employee_id: req.body.emp_id}
 
   axios.delete(`http://127.0.0.1:5000/deleteemployee`,{data:{employee_id: deleteEmployeeID}})
     .then(function(response) {
